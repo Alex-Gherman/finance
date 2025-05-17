@@ -1,0 +1,17 @@
+# Node modules
+node_modules
+npm-debug.log
+
+# Logs
+*.log
+
+# Environment files
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
