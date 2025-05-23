@@ -10,7 +10,9 @@ finance-website
 │   ├── src
 │   │   ├── app.js
 │   │   ├── controllers
-│   │   │   └── index.js
+
+│   │   ├── nginx
+│   │   │   └── default.conf
 │   │   ├── models
 │   │   │   └── index.js
 │   │   ├── routes
