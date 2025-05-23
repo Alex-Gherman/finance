@@ -4,11 +4,13 @@ services:
     volumes:
       - ./frontend/src:/app/src
       - ./frontend/public:/app/public
+      - /app/node_modules
     ports:
       - "3000:3000"
     environment:
       - NODE_ENV=development
       - NODE_OPTIONS=--openssl-legacy-provider
+      - CHOKIDAR_USEPOLLING=true
 
   backend:
     build: ./backend
