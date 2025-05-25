@@ -1,0 +1,24 @@
+
+.navbar1{
+    background-color: black !important;
+}
+.navbar-toggler-icon{
+    color: white !important;
+}
+.navbar-brand1{
+    margin-right: .5rem !important;
+    margin-left: 1rem !important;
+    font-size: 30px !important;
+}
+.nav-link{
+    font-size: 20px !important;
+}
+
+a.nav-link.active {
+    
+    color:orange !important;
+  }
+a.nav-link:hover {
+    
+    color:orange !important;
+  }

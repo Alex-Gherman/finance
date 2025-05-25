@@ -1,0 +1,17 @@
+.start {
+    display:flex;
+    justify-content:center;
+    margin-top: 1rem;
+    max-height: 60%;
+    
+  }
+ .start-img{
+    border-radius: 50px;
+ } 
+  @media (max-width: 768px) {
+    .start {
+        
+        margin-top: 5rem;
+        
+      }
+  }

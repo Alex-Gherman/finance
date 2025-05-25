@@ -1,0 +1,10 @@
+.playertaple{
+    margin: 2rem;
+}
+.MuiTableCell-root .MuiTableCell-body .MuiTableCell-paddingNone  {
+    display: none;
+}
+.MuiTableCell-root .MuiTableCell-head .MTableHeader-header-261 .MuiTableCell-paddingCheckbox{
+    background-color: 'orange' !important;
+    color: '#FFF'!important;
+}
