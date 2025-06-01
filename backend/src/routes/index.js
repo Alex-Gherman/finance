@@ -2,11 +2,19 @@ import express from 'express';
 import { User } from '../models/index.js';
 
 const router = express.Router();
-
-// Example route
-router.get('/api/some-endpoint', (req, res) => {
-    res.json({ message: 'This is a sample endpoint' });
+// Middleware to parse JSON bodies
+router.use(express.json());
+router.use(express.urlencoded({ extended: true }));
+// Home route
+router.get('/', (req, res) => {
+    res.send('Welcome to the API');
 });
+// Not Found route
+router.get('*', (req, res) => {
+    res.status(404).send('404 - Not Found');
+});
+
+
 
 // Login route
 router.post('/login', async (req, res) => {
@@ -24,6 +32,10 @@ router.post('/login', async (req, res) => {
         res.status(500).json({ message: 'Server error', error });
     }
 });
+// Check route
+router.get('/check', (req, res) => {
+    res.status(200).json({ message: 'Check route is working' });   
+}); 
 
 // Register route
 router.post('/register', async (req, res) => {

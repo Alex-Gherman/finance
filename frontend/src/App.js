@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { HomePage, NotFoundPage, LoginPage, RegisterPage } from './pages';
-import SignUp from './components/SignUp/SignUp';
+import { HomePage, NotFoundPage, LoginPage, RegisterPage } from './pages/index.js';
 
 const App = () => {
     return (

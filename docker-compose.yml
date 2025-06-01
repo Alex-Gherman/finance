@@ -10,7 +10,13 @@ services:
     environment:
       - NODE_ENV=development
       - NODE_OPTIONS=--openssl-legacy-provider
-      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/public:/app/public
+    depends_on:
+      - backend
+    networks:
+      - finance_network
 
   backend:
     build: ./backend
@@ -23,22 +29,21 @@ services:
       - MONGO_URI=mongodb://mongo:27017/finance
     depends_on:
       - mongo
+    networks:
+      - finance_network
 
   mongo:
     image: mongo:latest
     ports:
       - "27017:27017"
     volumes:
-      - mongo-data:/data/db
-
-  nginx:
-    image: nginx:latest
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-    ports:
-      - "80:80"
-    depends_on:
-      - frontend
+      - mongo_data:/data/db
+    networks:
+      - finance_network
 
 volumes:
-  mongo-data:
+  mongo_data:
+
+networks:
+  finance_network:
+    driver: bridge
